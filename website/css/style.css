@@ -1,0 +1,4 @@
+body { background: #181d2f; color: #fff; font-family: 'Segoe UI', sans-serif; }
+nav { position: fixed; width: 100%; background: #10141f; }
+.hero-title { font-size: 3rem; color: #00fff7; margin-top: 6rem; text-align: center; }
+.hero-subtitle { text-align: center; color: #aaa; margin-bottom: 2rem; }
