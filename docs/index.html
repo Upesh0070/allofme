@@ -3,449 +3,108 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Future Architect | AI Innovation & Beyond</title>
+  <title>Upesh</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-    
-    body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 50%, #16213e 100%);
-      color: #ffffff;
-      overflow-x: hidden;
-    }
-    
-    .container {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 0 20px;
-    }
-    
-    /* Animated Header */
-    header {
-      height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      position: relative;
-      background: radial-gradient(circle at 50% 50%, rgba(0, 255, 255, 0.1) 0%, transparent 50%);
-    }
-    
-    .hero-content {
-      text-align: center;
-      z-index: 2;
-    }
-    
-    .hero-title {
-      font-size: 4rem;
-      font-weight: 700;
-      background: linear-gradient(45deg, #00ffff, #ff00ff, #ffff00);
-      background-size: 300% 300%;
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      animation: gradientShift 3s ease-in-out infinite;
-      margin-bottom: 1rem;
-    }
-    
-    .hero-subtitle {
-      font-size: 1.5rem;
-      color: #cccccc;
-      margin-bottom: 2rem;
-    }
-    
-    @keyframes gradientShift {
-      0%, 100% { background-position: 0% 50%; }
-      50% { background-position: 100% 50%; }
-    }
-    
-    /* Navigation */
-    nav {
-      position: fixed;
-      top: 0;
-      width: 100%;
-      background: rgba(0, 0, 0, 0.9);
-      backdrop-filter: blur(10px);
-      z-index: 1000;
-      padding: 1rem 0;
-    }
-    
-    .nav-content {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-    
-    .nav-links {
-      display: flex;
-      list-style: none;
-      gap: 2rem;
-    }
-    
-    .nav-links a {
-      color: #ffffff;
-      text-decoration: none;
-      transition: color 0.3s ease;
-    }
-    
-    .nav-links a:hover {
-      color: #00ffff;
-    }
-    
-    /* Sections */
-    section {
-      padding: 5rem 0;
-      position: relative;
-    }
-    
-    .section-title {
-      font-size: 2.5rem;
-      text-align: center;
-      margin-bottom: 3rem;
-      color: #00ffff;
-    }
-    
-    /* Card Grid */
-    .card-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-      gap: 2rem;
-      margin-top: 2rem;
-    }
-    
-    .card {
-      background: rgba(255, 255, 255, 0.05);
-      border: 1px solid rgba(0, 255, 255, 0.3);
-      border-radius: 15px;
-      padding: 2rem;
-      backdrop-filter: blur(10px);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-    
-    .card:hover {
-      transform: translateY(-10px);
-      box-shadow: 0 20px 40px rgba(0, 255, 255, 0.2);
-    }
-    
-    .card h3 {
-      color: #ff00ff;
-      margin-bottom: 1rem;
-      font-size: 1.3rem;
-    }
-    
-    .card p {
-      line-height: 1.6;
-      color: #cccccc;
-    }
-    
-    /* Status indicators & Shop links */
-    .status {
-      display: inline-block;
-      padding: 0.3rem 1rem;
-      border-radius: 20px;
-      font-size: 0.8rem;
-      margin-top: 1rem;
-    }
-    
-    .status.active {
-      background: rgba(0, 255, 0, 0.2);
-      border: 1px solid #00ff00;
-      color: #00ff00;
-    }
-    
-    .status.developing {
-      background: rgba(255, 255, 0, 0.2);
-      border: 1px solid #ffff00;
-      color: #ffff00;
-    }
-    
-    .status.missing {
-      background: rgba(255, 0, 0, 0.2);
-      border: 1px solid #ff0000;
-      color: #ff0000;
-    }
-    
-    /* Shop button style */
-    #shop .card a {
-      display: inline-block;
-      margin-top: 1rem;
-      padding: 0.5rem 1rem;
-      background: #0ff;
-      color: #000;
-      font-weight: 600;
-      border-radius: 6px;
-      text-decoration: none;
-    }
-    #shop .card a:hover {
-      opacity: 0.85;
-    }
-    
-    /* Floating particles */
-    .particle {
-      position: fixed;
-      width: 4px;
-      height: 4px;
-      background: #00ffff;
-      border-radius: 50%;
-      pointer-events: none;
-      opacity: 0.7;
-      animation: float 6s infinite linear;
-    }
-    
-    @keyframes float {
-      0% {
-        transform: translateY(100vh) rotate(0deg);
-        opacity: 0;
-      }
-      10% {
-        opacity: 0.7;
-      }
-      90% {
-        opacity: 0.7;
-      }
-      100% {
-        transform: translateY(-100px) rotate(360deg);
-        opacity: 0;
-      }
-    }
-    
-    /* Responsive */
-    @media (max-width: 768px) {
-      .hero-title {
-        font-size: 2.5rem;
-      }
-      
-      .card-grid {
-        grid-template-columns: 1fr;
-      }
-      
-      .nav-links {
-        gap: 1rem;
-      }
-    }
+    body { font-family: 'Inter', sans-serif; background: #0a0a0a; color: #e5e7eb; }
+    .hero-bg { background: url('https://source.unsplash.com/random/1600x900/?tech') no-repeat center/cover; }
+    .timeline-item { transition: all 0.3s; }
+    .timeline-item:hover { transform: scale(1.05); }
   </style>
 </head>
 <body>
-  <nav>
-    <div class="container">
-      <div class="nav-content">
-        <div class="logo">Future Architect</div>
-        <ul class="nav-links">
-          <li><a href="#innovations">Innovations</a></li>
-          <li><a href="#learning">Learning</a></li>
-          <li><a href="#services">Services</a></li>
-          <li><a href="#vision">Vision</a></li>
-          <li><a href="#roadmap">Roadmap</a></li>
-          <li><a href="#shop">Shop</a></li>
-        </ul>
+  <!-- Navbar -->
+  <nav class="bg-black p-4 sticky top-0 z-10">
+    <div class="container mx-auto flex justify-between items-center">
+      <a href="#" class="text-2xl font-bold text-blue-400">Upesh</a>
+      <div class="space-x-4">
+        <a href="#about" class="hover:text-blue-400">About</a>
+        <a href="#resume" class="hover:text-blue-400">Resume</a>
+        <a href="#projects" class="hover:text-blue-400">Projects</a>
+        <a href="#contact" class="hover:text-blue-400">Contact</a>
       </div>
     </div>
   </nav>
 
-  <header>
-    <div class="hero-content">
-      <h1 class="hero-title">Architecting Tomorrow</h1>
-      <p class="hero-subtitle">Where AI Innovation Meets Human Potential</p>
+  <!-- Hero Section -->
+  <section id="about" class="hero-bg h-screen flex items-center text-center">
+    <div class="container mx-auto">
+      <h1 class="text-5xl font-bold mb-4">Upesh</h1>
+      <p class="text-xl mb-6">Engineering Excellence, Automating the Inevitable</p>
+      <p class="text-lg max-w-2xl mx-auto">A showcase of my skills, experience, and vision for an automated future.</p>
+      <a href="#resume" class="bg-blue-600 text-white px-6 py-3 mt-6 rounded-full hover:bg-blue-700">Dive In</a>
     </div>
-  </header>
+  </section>
 
-  <section id="innovations">
-    <div class="container">
-      <h2 class="section-title">Current Innovations</h2>
-      <div class="card-grid">
-        <div class="card">
-          <h3>🤖 Autobots Prototype</h3>
-          <p>Advanced AI automation systems designed to revolutionize workflow efficiency and human-machine collaboration.</p>
-          <span class="status developing">In Development</span>
+  <!-- About Me -->
+  <section id="about" class="py-16 bg-gray-900">
+    <div class="container mx-auto">
+      <h2 class="text-3xl font-bold text-center mb-8">About Me</h2>
+      <p class="text-lg max-w-3xl mx-auto text-center">I’m a technical innovator with a passion for automation. My journey at Dell as a Highly Decorated Technician Support Engineer taught me that everything can be automated—it’s inevitable. Now, I’m driving that vision forward with AI and code.</p>
+    </div>
+  </section>
+
+  <!-- Digital Resume (Timeline) -->
+  <section id="resume" class="py-16 bg-black">
+    <div class="container mx-auto">
+      <h2 class="text-3xl font-bold text-center mb-8">Experience</h2>
+      <div class="space-y-8 max-w-4xl mx-auto">
+        <div class="timeline-item bg-gray-800 p-6 rounded-lg shadow-lg">
+          <h3 class="text-xl font-semibold">Highly Decorated Technician Support Engineer, Dell (2022–2024)</h3>
+          <p class="text-gray-400">Streamlined support processes, improved efficiency by 30%. Recognized for exceptional problem-solving skills.</p>
+          <button class="text-blue-400 mt-2" onclick="this.nextElementSibling.classList.toggle('hidden')">Details</button>
+          <div class="hidden mt-4 text-gray-300">Led a team of technicians, optimized workflows, and implemented new support tools. Received multiple awards for outstanding performance. Understood everything can be automated—it’s inevitable—which sparked my journey into coding and AI.</div>
         </div>
-        <div class="card">
-          <h3>📚 AI-Powered Books</h3>
-          <p>Revolutionary publications exploring the intersection of artificial intelligence, human consciousness, and future possibilities.</p>
-          <span class="status missing">Content Needed</span>
+      </div>
+      <a href="/resume.pdf" class="block text-center text-blue-400 mt-8">Download PDF Resume</a>
+    </div>
+  </section>
+
+  <!-- What I’m Building -->
+  <section id="projects" class="py-16 bg-gray-900">
+    <div class="container mx-auto">
+      <h2 class="text-3xl font-bold text-center mb-8">What I’m Building</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+        <div class="bg-gray-800 p-6 rounded-lg shadow-lg">
+          <h3 class="text-xl font-semibold">AI Automation Tools</h3>
+          <p class="text-gray-400">Developing AI agents to automate tech support workflows. Stack: Python, Flask, AWS.</p>
+          <a href="https://github.com/yourusername" class="text-blue-400 mt-4 inline-block">View Code</a>
         </div>
-        <div class="card">
-          <h3>🏥 AI Agent Ecosystem</h3>
-          <p>Specialized AI agents: Lawyer, Doctor, Teacher, Principal - automating professional expertise while maintaining human oversight.</p>
-          <span class="status active">Prototype Ready</span>
-        </div>
-        <div class="card">
-          <h3>🔮 Future Profession Simulator</h3>
-          <p>Interactive experiences showcasing human-robot collaborative careers that don't exist yet but will define tomorrow's workforce.</p>
-          <span class="status missing">Concept Phase</span>
+        <div class="bg-gray-800 p-6 rounded-lg shadow-lg">
+          <h3 class="text-xl font-semibold">Tech Insights</h3>
+          <p class="text-gray-400">Sharing my journey and the future of automation in tech.</p>
+          <a href="#" class="text-blue-400 mt-4 inline-block">Coming Soon</a>
         </div>
       </div>
     </div>
   </section>
 
-  <section id="learning">
-    <div class="container">
-      <h2 class="section-title">Learning Revolution</h2>
-      <div class="card-grid">
-        <div class="card">
-          <h3>🧠 Transformed Learning Methodology</h3>
-          <p>How AI has fundamentally changed knowledge acquisition, retention, and application in real-world scenarios.</p>
-          <span class="status missing">Documentation Needed</span>
-        </div>
-        <div class="card">
-          <h3>🔇 Cutting Through Digital Noise</h3>
-          <p>Strategies for filtering information overload and plugging directly into the knowledge matrix that matters.</p>
-          <span class="status developing">Framework in Progress</span>
-        </div>
-        <div class="card">
-          <h3>🚀 Stepping Into the Unknown</h3>
-          <p>Methodologies for embracing uncertainty and thriving in rapidly evolving technological landscapes.</p>
-          <span class="status missing">Experiences to Document</span>
-        </div>
-        <div class="card">
-          <h3>🎯 Critical Thinking Enhancement</h3>
-          <p>AI-augmented analytical frameworks for navigating complex problems and emerging challenges.</p>
-          <span class="status missing">Case Studies Needed</span>
-        </div>
-      </div>
+  <!-- Contact Me -->
+  <section id="contact" class="py-16 bg-black">
+    <div class="container mx-auto">
+      <h2 class="text-3xl font-bold text-center mb-8">Get in Touch</h2>
+      <p class="text-center mb-8">Interested in automation or collaboration? Let’s connect.</p>
+      <form class="max-w-lg mx-auto">
+        <input type="text" placeholder="Name" class="w-full p-3 mb-4 bg-gray-800 border border-gray-700 rounded">
+        <input type="email" placeholder="Email" class="w-full p-3 mb-4 bg-gray-800 border border-gray-700 rounded">
+        <textarea placeholder="Message" class="w-full p-3 mb-4 bg-gray-800 border border-gray-700 rounded h-32"></textarea>
+        <button type="submit" class="bg-blue-600 text-white px-6 py-3 rounded hover:bg-blue-700">Send</button>
+      </form>
     </div>
   </section>
 
-  <section id="services">
-    <div class="container">
-      <h2 class="section-title">Services & Offerings</h2>
-      <div class="card-grid">
-        <div class="card">
-          <h3>💻 Technology Literacy Programs</h3>
-          <p>Comprehensive courses bridging the gap between current capabilities and future technological requirements.</p>
-          <span class="status missing">Curriculum Development</span>
-        </div>
-        <div class="card">
-          <h3>🛡️ Privacy in the Digital Age</h3>
-          <p>Deep exploration: What is privacy really? Its importance in an interconnected world and practical protection strategies.</p>
-          <span class="status missing">Research & Content</span>
-        </div>
-        <div class="card">
-          <h3>⚡ Tech Advancement Simulations</h3>
-          <p>First-hand experiential learning through simulated technological breakthroughs and their societal impacts.</p>
-          <span class="status missing">Platform Development</span>
-        </div>
-        <div class="card">
-          <h3>🎓 Custom Courses</h3>
-          <p>Tailored educational experiences for individuals and organizations navigating digital transformation.</p>
-          <span class="status missing">Course Content</span>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section id="vision">
-    <div class="container">
-      <h2 class="section-title">Vision & Philosophy</h2>
-      <div class="card-grid">
-        <div class="card">
-          <h3>🌟 Futuristic Imagination vs Reality</h3>
-          <p>Separating science fiction from achievable innovation - what's possible, what's not, and what lies between.</p>
-          <span class="status missing">Analysis Framework</span>
-        </div>
-        <div class="card">
-          <h3>🔮 Personal Future Imagination</h3>
-          <p>Detailed explorations of technological possibilities through the lens of human potential and societal evolution.</p>
-          <span class="status missing">Vision Documentation</span>
-        </div>
-        <div class="card">
-          <h3>🗣️ Free Speech in the Digital Era</h3>
-          <p>Examining what "free speech" means today, acknowledging bias while seeking truth in our complex reality.</p>
-          <span class="status missing">Research & Position</span>
-        </div>
-        <div class="card">
-          <h3>🤝 Trust in Technology</h3>
-          <p>Building authentic relationships between humans and AI systems while maintaining transparency and accountability.</p>
-          <span class="status missing">Trust Framework</span>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section id="roadmap">
-    <div class="container">
-      <h2 class="section-title">Mission & Roadmap</h2>
-      <div class="card-grid">
-        <div class="card">
-          <h3>🎯 Core Mission</h3>
-          <p>To bridge the gap between current human potential and future technological possibilities through education, innovation, and ethical advancement.</p>
-          <span class="status missing">Mission Statement Refinement</span>
-        </div>
-        <div class="card">
-          <h3>📈 Development Roadmap</h3>
-          <p>Strategic milestones for product development, service delivery, and market impact over the next 1-5 years.</p>
-          <span class="status missing">Detailed Timeline</span>
-        </div>
-        <div class="card">
-          <h3>🌐 Global Impact Vision</h3>
-          <p>How these innovations will scale to benefit humanity while addressing ethical concerns and accessibility challenges.</p>
-          <span class="status missing">Impact Metrics</span>
-        </div>
-        <div class="card">
-          <h3>🔄 Continuous Evolution</h3>
-          <p>Adaptation strategies for staying ahead of technological change while maintaining human-centered values.</p>
-          <span class="status missing">Evolution Framework</span>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ────── SHOP SECTION ────── -->
-  <section id="shop">
-    <div class="container">
-      <h2 class="section-title">🛒 Chaos Shop</h2>
-      <div class="card-grid">
-        <div class="card">
-          <h3>Prompt Cheat-Sheet</h3>
-          <p>50 battle-tested prompts to make GPTs sing.</p>
-          <a href="YOUR_LINK_1" class="status active" target="_blank">Your Link 1 →</a>
-        </div>
-        <div class="card">
-          <h3>AI Virus Cleanse</h3>
-          <p>One-time remote session to nuke malware & LLM junk.</p>
-          <a href="YOUR_LINK_2" class="status active" target="_blank">Your Link 2 →</a>
-        </div>
-        <div class="card">
-          <h3>Custom GPT Agent</h3>
-          <p>We’ll build & deploy a tailored agent for your workflow.</p>
-          <a href="YOUR_LINK_3" class="status active" target="_blank">Your Link 3 →</a>
-        </div>
-        <div class="card">
-          <h3>Chaos Newsletter PRO</h3>
-          <p>Paid edition—deep dives, tools, & insider drops.</p>
-          <a href="YOUR_LINK_4" class="status active" target="_blank">Your Link 4 →</a>
-        </div>
-      </div>
-    </div>
-  </section>
+  <!-- Footer -->
+  <footer class="bg-gray-900 p-4 text-center">
+    <p>© 2025 Upesh. Built from first principles.</p>
+  </footer>
 
   <script>
-    // Create floating particles
-    function createParticle() {
-      const particle = document.createElement('div');
-      particle.className = 'particle';
-      particle.style.left = Math.random() * 100 + 'vw';
-      particle.style.animationDuration = (Math.random() * 3 + 3) + 's';
-      document.body.appendChild(particle);
-      setTimeout(() => particle.remove(), 6000);
-    }
-    setInterval(createParticle, 300);
-
-    // Smooth scrolling
-    document.querySelectorAll('a[href^="#"]').forEach(a => {
-      a.addEventListener('click', e => {
+    // Smooth scroll
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
         e.preventDefault();
-        document.querySelector(a.getAttribute('href')).scrollIntoView({ behavior: 'smooth', block: 'start' });
+        document.querySelector(this.getAttribute('href')).scrollIntoView({ behavior: 'smooth' });
       });
-    });
-
-    // Dynamic header effect
-    document.addEventListener('mousemove', e => {
-      const hero = document.querySelector('header');
-      const x = e.clientX / window.innerWidth;
-      const y = e.clientY / window.innerHeight;
-      hero.style.background = `radial-gradient(circle at ${x*100}% ${y*100}%, rgba(0,255,255,0.1) 0%, transparent 50%)`;
     });
   </script>
 </body>
