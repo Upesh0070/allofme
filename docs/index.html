@@ -1,111 +1,69 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Upesh</title>
-  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>hotbpoison | Tech in a Hurry</title>
   <style>
-    body { font-family: 'Inter', sans-serif; background: #0a0a0a; color: #e5e7eb; }
-    .hero-bg { background: url('https://source.unsplash.com/random/1600x900/?tech') no-repeat center/cover; }
-    .timeline-item { transition: all 0.3s; }
-    .timeline-item:hover { transform: scale(1.05); }
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', Tahoma, sans-serif;
+      background: #0a0a0a;
+      color: #f5f5f5;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      text-align: center;
+    }
+    h1 {
+      font-size: 3rem;
+      margin: 0.5em 0;
+    }
+    p {
+      color: #aaa;
+      margin-bottom: 1.5em;
+    }
+    .links {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1.2em;
+      margin-bottom: 2em;
+    }
+    a {
+      text-decoration: none;
+      color: #fff;
+      background: #1f1f1f;
+      padding: 12px 20px;
+      border-radius: 10px;
+      transition: 0.3s ease;
+    }
+    a:hover {
+      background: #3f3fff;
+    }
+    footer {
+      font-size: 0.8rem;
+      color: #555;
+    }
   </style>
 </head>
 <body>
-  <!-- Navbar -->
-  <nav class="bg-black p-4 sticky top-0 z-10">
-    <div class="container mx-auto flex justify-between items-center">
-      <a href="#" class="text-2xl font-bold text-blue-400">Upesh</a>
-      <div class="space-x-4">
-        <a href="#about" class="hover:text-blue-400">About</a>
-        <a href="#resume" class="hover:text-blue-400">Resume</a>
-        <a href="#projects" class="hover:text-blue-400">Projects</a>
-        <a href="#contact" class="hover:text-blue-400">Contact</a>
-      </div>
-    </div>
-  </nav>
+  <h1>🔥 hotbpoison</h1>
+  <p>Creator. Technologist. Posting raw velocity on all fronts.</p>
 
-  <!-- Hero Section -->
-  <section id="about" class="hero-bg h-screen flex items-center text-center">
-    <div class="container mx-auto">
-      <h1 class="text-5xl font-bold mb-4">Upesh</h1>
-      <p class="text-xl mb-6">Engineering Excellence, Automating the Inevitable</p>
-      <p class="text-lg max-w-2xl mx-auto">A showcase of my skills, experience, and vision for an automated future.</p>
-      <a href="#resume" class="bg-blue-600 text-white px-6 py-3 mt-6 rounded-full hover:bg-blue-700">Dive In</a>
-    </div>
-  </section>
+  <div class="links">
+    <a href="https://www.instagram.com/hotbpoison" target="_blank">Instagram</a>
+    <a href="https://www.youtube.com/@techinahurry-A" target="_blank">YouTube</a>
+    <a href="https://www.threads.com/@hotbpoison" target="_blank">Threads</a>
+    <a href="https://x.com/upeshinmars" target="_blank">X (Twitter)</a>
+    <a href="https://massive-industry-848.notion.site/Website-Structure-212983e5ce75804688b6e1b68f4d681e?pvs=143" target="_blank">Notion Live Page</a>
+  </div>
 
-  <!-- About Me -->
-  <section id="about" class="py-16 bg-gray-900">
-    <div class="container mx-auto">
-      <h2 class="text-3xl font-bold text-center mb-8">About Me</h2>
-      <p class="text-lg max-w-3xl mx-auto text-center">I’m a technical innovator with a passion for automation. My journey at Dell as a Highly Decorated Technician Support Engineer taught me that everything can be automated—it’s inevitable. Now, I’m driving that vision forward with AI and code.</p>
-    </div>
-  </section>
-
-  <!-- Digital Resume (Timeline) -->
-  <section id="resume" class="py-16 bg-black">
-    <div class="container mx-auto">
-      <h2 class="text-3xl font-bold text-center mb-8">Experience</h2>
-      <div class="space-y-8 max-w-4xl mx-auto">
-        <div class="timeline-item bg-gray-800 p-6 rounded-lg shadow-lg">
-          <h3 class="text-xl font-semibold">Highly Decorated Technician Support Engineer, Dell (2022–2024)</h3>
-          <p class="text-gray-400">Streamlined support processes, improved efficiency by 30%. Recognized for exceptional problem-solving skills.</p>
-          <button class="text-blue-400 mt-2" onclick="this.nextElementSibling.classList.toggle('hidden')">Details</button>
-          <div class="hidden mt-4 text-gray-300">Led a team of technicians, optimized workflows, and implemented new support tools. Received multiple awards for outstanding performance. Understood everything can be automated—it’s inevitable—which sparked my journey into coding and AI.</div>
-        </div>
-      </div>
-      <a href="/resume.pdf" class="block text-center text-blue-400 mt-8">Download PDF Resume</a>
-    </div>
-  </section>
-
-  <!-- What I’m Building -->
-  <section id="projects" class="py-16 bg-gray-900">
-    <div class="container mx-auto">
-      <h2 class="text-3xl font-bold text-center mb-8">What I’m Building</h2>
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-        <div class="bg-gray-800 p-6 rounded-lg shadow-lg">
-          <h3 class="text-xl font-semibold">AI Automation Tools</h3>
-          <p class="text-gray-400">Developing AI agents to automate tech support workflows. Stack: Python, Flask, AWS.</p>
-          <a href="https://github.com/yourusername" class="text-blue-400 mt-4 inline-block">View Code</a>
-        </div>
-        <div class="bg-gray-800 p-6 rounded-lg shadow-lg">
-          <h3 class="text-xl font-semibold">Tech Insights</h3>
-          <p class="text-gray-400">Sharing my journey and the future of automation in tech.</p>
-          <a href="#" class="text-blue-400 mt-4 inline-block">Coming Soon</a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Contact Me -->
-  <section id="contact" class="py-16 bg-black">
-    <div class="container mx-auto">
-      <h2 class="text-3xl font-bold text-center mb-8">Get in Touch</h2>
-      <p class="text-center mb-8">Interested in automation or collaboration? Let’s connect.</p>
-      <form class="max-w-lg mx-auto">
-        <input type="text" placeholder="Name" class="w-full p-3 mb-4 bg-gray-800 border border-gray-700 rounded">
-        <input type="email" placeholder="Email" class="w-full p-3 mb-4 bg-gray-800 border border-gray-700 rounded">
-        <textarea placeholder="Message" class="w-full p-3 mb-4 bg-gray-800 border border-gray-700 rounded h-32"></textarea>
-        <button type="submit" class="bg-blue-600 text-white px-6 py-3 rounded hover:bg-blue-700">Send</button>
-      </form>
-    </div>
-  </section>
-
-  <!-- Footer -->
-  <footer class="bg-gray-900 p-4 text-center">
-    <p>© 2025 Upesh. Built from first principles.</p>
+  <footer>
+    © 2025 hotbpoison | Built with chaos and caffeine.
   </footer>
-
-  <script>
-    // Smooth scroll
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener('click', function(e) {
-        e.preventDefault();
-        document.querySelector(this.getAttribute('href')).scrollIntoView({ behavior: 'smooth' });
-      });
-    });
-  </script>
 </body>
 </html>
